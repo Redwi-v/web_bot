@@ -1,0 +1,53 @@
+.navigation {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	z-index: 80;
+
+	.list {
+		display: flex;
+		justify-content: space-around;
+		height: 50px;
+		align-items: center;
+	}
+
+	.item {
+		position: relative;
+		width: 43px;
+		height: 43px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&.active {
+			&::after {
+				content: '';
+				width: 43px;
+				height: 5px;
+				border-radius: 0 0 5px 5px;
+				background-color: #000;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		}
+
+		.numberOfItemsInTheCart {
+			position: absolute;
+			right: -1px;
+			top: 3px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: 1px solid #000;
+			font-size: 14px;
+			font-weight: 600;
+			background-color: #fff;
+		}
+	}
+}

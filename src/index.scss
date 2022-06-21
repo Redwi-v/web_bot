@@ -1,7 +1,16 @@
 @import './fonts.scss';
 
+html {
+	overflow: hidden;
+}
 .container {
 	padding: 0 20px;
+}
+
+.AppInformation {
+	overflow: auto;
+	height: 100vh;
+	scrollbar-width: thin;
 }
 
 // body {

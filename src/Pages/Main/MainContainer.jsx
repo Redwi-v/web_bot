@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Main from './Main';
 import ProductImage from '../../assets/Product.png';
+import { connect } from 'react-redux';
+import { open_closePoopUp } from '../../redux/poopUp';
 
 // remove later
 const productsTestArray = [
@@ -77,4 +79,8 @@ const MainContainer = props => {
 	);
 };
 
-export default MainContainer;
+const mapStateToProps = state => {
+	return {};
+};
+
+export default connect(mapStateToProps, { open_closePoopUp })(MainContainer);
