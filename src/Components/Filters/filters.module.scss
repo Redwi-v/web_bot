@@ -1,0 +1,23 @@
+.filters {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	.ProductsCount {
+		font-size: 19px;
+		span {
+		}
+	}
+
+	.actions {
+		display: flex;
+		align-items: center;
+	}
+	.action_item {
+		&:not(:first-child) {
+			margin-left: 10px;
+		}
+	}
+	.action {
+	}
+}

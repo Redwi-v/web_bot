@@ -1,30 +1,19 @@
 .slider {
-	height: 164px;
-	background-color: rgb(201, 69, 69);
+	background-color: #7a293a;
 	border-radius: 15px;
-	padding: 11px 20px 0px 20px;
-	position: relative;
 	color: #fff;
+	position: relative;
+	margin-top: 10px;
 
 	.slide {
-		height: 100%;
-	}
-
-	.slick_slider {
-		height: 100%;
-		//slider-list
-		&:first-child {
-		}
-
-		//slider-dots -> div
-		&:last-child {
-			position: static;
-		}
+		position: relative;
+		padding: 11px 20px 0px 20px;
+		height: 164px;
 	}
 
 	.dots {
 		position: absolute;
-		bottom: 10px;
+		bottom: 5px;
 		left: 0;
 		right: 0;
 	}
@@ -32,9 +21,31 @@
 	.slide_title {
 		font-weight: 600;
 		font-size: 28px;
+		z-index: 40;
+		line-height: 32px;
 	}
 
 	.slide_subtitle {
-		max-width: 210px;
+		max-width: 199px;
+		z-index: 40;
+		line-height: 16px;
+		font-size: 12px;
+	}
+
+	.iamge {
+		position: absolute;
+		max-width: 221px;
+		max-height: 138px;
+		right: 0;
+		top: 13px;
+		z-index: -1;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.list {
+		height: 100%;
 	}
 }
