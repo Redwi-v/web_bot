@@ -1,11 +1,23 @@
 .productsList {
-	margin-top: 20px;
+	margin: 30px 0 60px 0;
+
+	&.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'featured item-1 '
+			'featured item-1 ';
+		grid-gap: 15px;
+	}
 }
 
 .card {
 	position: relative;
+	margin-bottom: 50px;
 
 	.header {
+		display: flex;
+		justify-content: center;
 	}
 
 	.discount {
@@ -31,24 +43,84 @@
 		justify-content: center;
 		background-color: #fff;
 		border-radius: 15px;
+
+		img {
+		}
+	}
+
+	// GRID mode
+	&.grid {
+		margin-bottom: 25px;
+
+		.header {
+			max-width: 160px;
+			max-height: 110px;
+		}
+		.previewImage {
+			padding: 15px 10px 0px 10px;
+			margin-bottom: 4px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		.dickription {
+			display: none;
+		}
+
+		.discount {
+			border-radius: 15px;
+			font-size: 12px;
+			line-height: 12px;
+			padding: 4px 9px;
+			top: 0;
+		}
 	}
 
 	//footer
 	.footer {
-		padding-left: 15px;
+		padding: 10px 0 0 15px;
 	}
 	.brand {
+		font-weight: 500;
+		font-size: 16px;
+		margin-bottom: 7px;
 	}
 
 	.name {
+		color: #7c7a7a;
+		font-size: 13px;
+		margin-bottom: 8px;
+		line-height: 16px;
 	}
 	.dickription {
+		font-size: 13px;
+		max-width: 310px;
+		margin-bottom: 10px;
 	}
 
 	.priseWraper {
+		display: flex;
+		font-weight: 500;
+		font-size: 14px;
 	}
 
 	.OldPrise {
+		margin-right: 10px;
+		color: #868686;
+		position: relative;
+
+		&::before {
+			content: '';
+			width: 46px;
+			height: 1px;
+			background-color: #868686;
+			position: absolute;
+			top: 49%;
+			left: -1px;
+		}
 	}
 
 	.prise {

@@ -1,10 +1,10 @@
 import style from './filters.module.scss';
-import arrows from '../../assets/icons/arrows.png';
+import sort from '../../assets/icons/arrows.png';
 import filters from '../../assets/icons/filter.png';
 import listTipe from '../../assets/icons/listTipe.png';
 
 const Filters = props => {
-	const { ProductsCount = 420 } = props;
+	const { ProductsCount = 420, changeGirdMode } = props;
 
 	return (
 		<div className={style.filters}>
@@ -14,13 +14,17 @@ const Filters = props => {
 
 			<ul className={style.actions}>
 				<li className={style.action_item}>
-					<button className={style.action}>
+					<button
+						//remove later
+						onClick={changeGirdMode}
+						//----
+						className={style.action}>
 						<img src={listTipe} alt='list tipe btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>
 					<button className={style.action}>
-						<img src={arrows} alt=' btn' />
+						<img src={sort} alt=' btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>
