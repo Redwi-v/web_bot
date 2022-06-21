@@ -1,0 +1,40 @@
+.slider {
+	height: 164px;
+	background-color: rgb(201, 69, 69);
+	border-radius: 15px;
+	padding: 11px 20px 0px 20px;
+	position: relative;
+	color: #fff;
+
+	.slide {
+		height: 100%;
+	}
+
+	.slick_slider {
+		height: 100%;
+		//slider-list
+		&:first-child {
+		}
+
+		//slider-dots -> div
+		&:last-child {
+			position: static;
+		}
+	}
+
+	.dots {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+	}
+
+	.slide_title {
+		font-weight: 600;
+		font-size: 28px;
+	}
+
+	.slide_subtitle {
+		max-width: 210px;
+	}
+}
