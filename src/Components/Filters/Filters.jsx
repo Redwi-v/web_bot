@@ -1,50 +1,46 @@
 import { useState } from 'react';
 import style from './filters.module.scss';
+import PriseRange from './PriseRange/PriseRange';
 
 const Filtes = props => {
-	const [rangeState, setRangeState] = useState({
-		ranage: 1,
-		valueMin: 30,
-		valueMax: 60,
-	});
-	const { valueMin, valueMax } = rangeState;
-
-	const changeRange = (e, valueName) => {
-		const value = e.target.valueAsNumber;
-		setRangeState({ ...rangeState, [valueName]: value });
-	};
-
 	return (
 		<div className={style.filters}>
-			<div className={style.title}>Фильтры</div>
+			<h1 className={style.title}>Фильтры</h1>
 
-			{/* <input className={style.ranage} max='100' min='0' step='1' type='range' onChange={range} /> */}
+			<h2 className={style.prise_title}>цена</h2>
 
-			<div className={style.range}>
-				<div className={style.ranage_track}>
-					<input
-						type='range'
-						value={valueMin}
-						onChange={e => {
-							changeRange(e, 'valueMin');
-						}}
-						className={style.ranage_min}
-						min='0'
-						max='100'
-						step='1'
-					/>
-					<input
-						type='range'
-						value={valueMax}
-						onChange={e => {
-							changeRange(e, 'valueMax');
-						}}
-						className={style.ranage_max}
-						min='0'
-						max='100'
-						step='1'
-					/>
-				</div>
+			<PriseRange />
+
+			<ul className={style.settings}>
+				<li className={style.setting}>
+					<Accargion />
+				</li>
+				<li className={style.setting}>
+					<Accargion />
+				</li>
+			</ul>
+		</div>
+	);
+};
+
+const Accargion = props => {
+	const [active, setActive] = useState(false);
+
+	return (
+		<div className={style.accardion}>
+			<div
+				onClick={() => {
+					setActive(!active);
+				}}
+				className={style.header}>
+				<div className={style.title}>hi open me</div>
+				<span>⇓</span>
+			</div>
+			<div className={`${style.footer} ${active && style.active}`}>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero esse rerum, quae quod fugiat maiores alias,
+					molestiae in molestias odit voluptatem consequatur omnis sint cumque, minus odio iusto temporibus iure!
+				</p>
 			</div>
 		</div>
 	);

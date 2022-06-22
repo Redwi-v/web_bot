@@ -11,7 +11,7 @@ const PoopUp = porps => {
 
 	return (
 		<div onClick={closePoopUp} className={style.poopUp} id={closeBtnID}>
-			<div className={`${style.window} container`}>
+			<div className={`${style.window}`}>
 				<button className={style.cross}>
 					<img src={crossIcon} alt='cross' id={closeBtnID} />
 				</button>

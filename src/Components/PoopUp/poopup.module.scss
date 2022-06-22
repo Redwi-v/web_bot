@@ -14,11 +14,13 @@
 		background-color: #fff;
 		width: 100%;
 		border-radius: 10px;
+		bottom: -10px;
+		overflow: auto;
 	}
 
 	.cross {
 		position: absolute;
 		right: 26px;
-		top: 30px;
+		top: 24px;
 	}
 }

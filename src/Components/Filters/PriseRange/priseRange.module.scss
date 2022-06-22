@@ -1,0 +1,94 @@
+@mixin circleStyles {
+	background-color: rgb(255, 255, 255);
+	-webkit-appearance: none;
+	height: 13px;
+	width: 13px;
+	cursor: pointer;
+	margin-top: -4px;
+	pointer-events: auto;
+	border-radius: 50%;
+	border: 1px solid #000;
+}
+
+.priseWraper {
+	display: flex;
+	margin: 10px 0 16px 0;
+
+	.line {
+		display: block;
+		height: 1px;
+		width: 24px;
+		margin: auto 20px;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.prise {
+		-webkit-appearance: none;
+		-moz-appearance: textfield;
+		border: 1px solid #dddddd;
+		border-radius: 3px;
+		max-width: 114px;
+		padding: 9px;
+		height: 40px;
+		font-size: 17px;
+		line-height: 24px;
+		font-weight: 300;
+	}
+}
+
+.range {
+	position: relative;
+	margin-bottom: 100px;
+
+	.ranage_track {
+		position: absolute;
+		margin: auto;
+		width: 100%;
+		height: 1px;
+		background-color: #bababa;
+		top: 0;
+		bottom: 0;
+	}
+	.ranage_min {
+	}
+
+	.ranage_max {
+	}
+
+	.ranage_min,
+	.ranage_max {
+		appearance: none;
+		width: 100%;
+		outline: none;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		background-color: transparent;
+		pointer-events: none;
+	}
+
+	input[type='range']::-webkit-slider-runnable-track {
+		-webkit-appearance: none;
+		height: 5px;
+	}
+	input[type='range']::-moz-range-track {
+		-moz-appearance: none;
+		height: 5px;
+	}
+	input[type='range']::-ms-track {
+		appearance: none;
+		height: 5px;
+	}
+	input[type='range']::-webkit-slider-thumb {
+		@include circleStyles;
+	}
+	input[type='range']::-moz-range-thumb {
+		@include circleStyles;
+	}
+	input[type='range']::-ms-thumb {
+		@include circleStyles;
+	}
+	input[type='range']:active::-webkit-slider-thumb {
+		@include circleStyles;
+	}
+}
