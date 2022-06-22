@@ -1,28 +1,15 @@
 import style from './main.module.scss';
 
 import Slider from '../../Components/Slider/Slider';
-import Filters from '../../Components/Filters/Filters';
+import Filters from '../../Components/FiltersMenu/FiltersMenu';
 import ProductsList from '../../Components/ProductsList/ProductsLIst';
-
-const Test = () => {
-	return (
-		<ul>
-			<li>Test</li>
-			<li>Test</li>
-			<li>Test</li>
-			<li>Test</li>
-			<li>Test</li>
-			<li>Test</li>
-			<li>Test</li>
-		</ul>
-	);
-};
+import Filtes from '../../Components/Filters/Filters';
 
 const Main = porps => {
 	const { products, changeGirdMode, girdMode, open_closePoopUp } = porps;
 
 	const openPoopUp = () => {
-		open_closePoopUp(<Test />);
+		open_closePoopUp(<Filtes />);
 	};
 
 	return (
