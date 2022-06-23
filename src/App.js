@@ -6,6 +6,7 @@ import SearchContainer from './Pages/Search/SearchContainer';
 import Product from './Pages/Product/Product';
 import CartContainer from './Pages/Cart/CartContainer';
 import FavoritesContainer from './Pages/Favorites/FavoritesContainer';
+import { useEffects } from 'react';
 
 function App() {
 	return (
