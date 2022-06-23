@@ -10,12 +10,12 @@
 	z-index: 100;
 
 	.window {
+		max-width: 526px;
 		position: relative;
 		background-color: #fff;
 		width: 100%;
 		border-radius: 10px;
 		bottom: -10px;
-		overflow: auto;
 	}
 
 	.cross {

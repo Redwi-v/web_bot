@@ -19,7 +19,6 @@ const PriseRange = props => {
 		setRangeState({ ...rangeState, valueMin: +value });
 	};
 	const changeMaxValue = value => {
-		value = +value;
 		if (value - valueMin <= maxGap) return setRangeState({ ...rangeState, valueMax: valueMin + maxGap });
 		setRangeState({ ...rangeState, valueMax: value });
 	};
@@ -28,7 +27,6 @@ const PriseRange = props => {
 	const drowLine = () => {
 		const percent1 = (valueMin / trackMaxValue) * 100;
 		const percent2 = (valueMax / trackMaxValue) * 100;
-		console.log(percent1, percent2);
 
 		if (rangeTrack.current) {
 			rangeTrack.current.style.background = `linear-gradient(to right, #BABABA ${percent1}% , #000 ${percent1}% , #000 ${percent2}%, #BABABA ${percent2}%)`;
@@ -39,7 +37,7 @@ const PriseRange = props => {
 	}, [rangeTrack, rangeState]);
 
 	return (
-		<div className=''>
+		<div className={style.prise_range}>
 			<div className={style.priseWraper}>
 				<Input className={style.prise} value={valueMin} type='number' submit={changeMinValue} />
 				<span className={style.line}></span>
