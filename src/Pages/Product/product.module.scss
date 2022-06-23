@@ -1,0 +1,161 @@
+.product {
+	padding: 0 22px 70px 22px;
+
+	.prewew {
+		height: 100%;
+	}
+	.icons {
+		position: relative;
+		img {
+			position: absolute;
+			z-index: 40;
+		}
+	}
+
+	.backArrow {
+		left: 0;
+		top: 17px;
+	}
+	.favoritеIcon {
+		top: 21px;
+		right: 0;
+	}
+
+	//main info
+	.mainInfo {
+		display: flex;
+		justify-content: space-between;
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 26px;
+		margin-top: 12px;
+		margin-bottom: 10px;
+	}
+	.brand {
+		font-weight: inherit;
+	}
+	.prise {
+		font-weight: inherit;
+	}
+
+	.subTitle {
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	.tag {
+		display: inline-block;
+		position: relative;
+		color: #005d85;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 19px;
+		margin-bottom: 20px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-image: url(../../assets/icons/rightArrow.png);
+			right: -15px;
+			margin: auto;
+			top: 2px;
+			bottom: 0;
+			width: 6px;
+			height: 10px;
+			background-repeat: no-repeat;
+		}
+	}
+
+	.discription {
+		position: relative;
+		font-size: 16px;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 1px;
+			background-color: #d8d8dd;
+			position: absolute;
+			top: -10px;
+			width: 100%;
+		}
+	}
+	.more {
+		display: block;
+		font-weight: 500;
+		line-height: 22px;
+		margin: 10px 0 15px 0;
+		font-size: 16px;
+	}
+	.chooseTitle {
+		font-weight: 500;
+		font-size: 17px;
+		line-height: 17px;
+		margin-bottom: 7px;
+	}
+
+	.color {
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		border-color: #d8d8dd;
+		margin-bottom: 15px;
+
+		&:checked {
+			&::after {
+				background-image: none;
+			}
+		}
+	}
+	.inStock {
+		border-color: #d8d8dd;
+	}
+	.cross {
+		position: absolute;
+		left: 2px;
+		top: 2px;
+	}
+}
+
+.slider {
+	height: 100%;
+	margin: 0 auto;
+
+	ul {
+		display: flex;
+	}
+
+	.dots {
+		height: 60px;
+		display: flex;
+		position: static;
+		text-align: start;
+
+		li {
+			width: auto;
+		}
+	}
+
+	.slide {
+		height: 240px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.page {
+		.image {
+			width: 100%;
+			height: 100%;
+			max-width: 60px;
+			height: 60px;
+			border: 1px solid #d8d8dd;
+			border-radius: 10px;
+			object-fit: contain;
+		}
+
+		.active {
+			border-color: #000;
+		}
+	}
+}

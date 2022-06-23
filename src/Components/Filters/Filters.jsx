@@ -2,115 +2,8 @@ import { useState } from 'react';
 import style from './filters.module.scss';
 import PriseRange from './PriseRange/PriseRange';
 import Accargion from './Accardion/Accardion';
-
-function IsWidthDiscount(props) {
-	const { label_1, label_2, name } = props;
-
-	return (
-		<div className={style.is_width_discount}>
-			<form className={style.radioWraper}>
-				<div className={style.radio}>
-					<input className={style.radioСircle} type='radio' id={name + '1'} name={name} />
-					<label className={style.label} htmlFor={name + '1'}>
-						{label_1}
-					</label>
-				</div>
-				<div className={style.radio}>
-					<input className={style.radioСircle} type='radio' id={name} name={name} />
-					<label className={style.label} htmlFor={name}>
-						{label_2}
-					</label>
-				</div>
-			</form>
-		</div>
-	);
-}
-function ChooseColor(props) {
-	const colors = [
-		{
-			color: '#FF0000',
-		},
-		{
-			color: '#00FF75',
-		},
-		{
-			color: '#FFBCD6',
-		},
-		{
-			color: '#FFFFFF',
-		},
-		{
-			color: '#FAFF09',
-		},
-		{
-			color: '#BF10EB',
-		},
-		{
-			color: '#EE0F65',
-		},
-		{
-			color: '#000',
-		},
-	];
-
-	const renderClolrs = colors.map(({ color }, index) => {
-		const background = {
-			background: color,
-		};
-
-		return <input key={index} style={background} className={style.color} name='color' type='radio' />;
-	});
-
-	return <div className={style.chooseColor}>{renderClolrs}</div>;
-}
-function ChooseSize(props) {
-	const sizes = [
-		{
-			size: 37,
-			inStock: true,
-		},
-		{
-			size: 38,
-			inStock: false,
-		},
-		{
-			size: 39,
-			inStock: true,
-		},
-		{
-			size: 'xxl',
-			inStock: true,
-		},
-		{
-			size: 'xl',
-			inStock: false,
-		},
-		{
-			size: 40,
-			inStock: true,
-		},
-		{
-			size: 41,
-			inStock: true,
-		},
-		{
-			size: 'l',
-			inStock: true,
-		},
-	];
-
-	const renderSizes = sizes.map(({ size, inStock }, index) => {
-		return (
-			<div className={style.size} key={index}>
-				<input disabled={!inStock} className={style.sizeSquare} name='size' id={`color${size}`} type='radio' />
-				<label className={`${style.label} ${inStock && style.inStock}`} htmlFor={`color${size}`}>
-					{size}
-				</label>
-			</div>
-		);
-	});
-	return <div className={style.chooseSize}>{renderSizes}</div>;
-}
+import ChooseColor from './ChooseColor/ChooseColor';
+import ChooseSize from './ChooseSize/ChooseSize';
 
 const items = [
 	{
@@ -162,5 +55,28 @@ const Filtes = props => {
 		</div>
 	);
 };
+
+function IsWidthDiscount(props) {
+	const { label_1, label_2, name } = props;
+
+	return (
+		<div className={style.is_width_discount}>
+			<form className={style.radioWraper}>
+				<div className={style.radio}>
+					<input className={style.radioСircle} type='radio' id={name + '1'} name={name} />
+					<label className={style.label} htmlFor={name + '1'}>
+						{label_1}
+					</label>
+				</div>
+				<div className={style.radio}>
+					<input className={style.radioСircle} type='radio' id={name} name={name} />
+					<label className={style.label} htmlFor={name}>
+						{label_2}
+					</label>
+				</div>
+			</form>
+		</div>
+	);
+}
 
 export default Filtes;

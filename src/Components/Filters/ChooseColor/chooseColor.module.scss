@@ -1,0 +1,41 @@
+//color
+.chooseColor {
+	display: flex;
+
+	.color {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		position: relative;
+
+		height: 25px;
+		width: 25px;
+		border: 1px solid #000;
+		border-radius: 7px;
+
+		&:checked {
+			border: 2px solid #000;
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 13px;
+				height: 13px;
+				background-image: url(../../../assets/icons/checkMark.png);
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	.wraper {
+		position: relative;
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+}

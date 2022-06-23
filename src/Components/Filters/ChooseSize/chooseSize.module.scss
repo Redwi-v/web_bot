@@ -1,0 +1,46 @@
+.chooseSize {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: -15px;
+
+	.size {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 55px;
+		height: 43px;
+		margin-bottom: 15px;
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+	.sizeSquare {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border: 1px solid #d8d8dd;
+		border-radius: 7px;
+		cursor: pointer;
+		&:checked {
+			border: 2px solid #000;
+		}
+	}
+
+	.label {
+		display: block;
+		text-transform: uppercase;
+		font-size: 17px;
+		color: #828282;
+	}
+
+	.inStock {
+		color: #000;
+	}
+}

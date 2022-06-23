@@ -1,6 +1,7 @@
 import style from './productsList.module.scss';
 import { NavLink } from 'react-router-dom';
 import ProductImage from '../../assets/Product.png';
+import PageNotFound from './PageNotFound/PageNotFound';
 
 import hartIcon from '../../assets/icons/hartIcon.png';
 
@@ -61,9 +62,15 @@ const ProductsList = props => {
 	const { grid = false, products = productsTestArray } = props;
 
 	// Render Products
-	const renderedProducts = products.map(product => {
+	let renderedProducts = products.map(product => {
 		return <ProductsCard grid={grid} key={product.id} {...product} />;
 	});
+
+	renderedProducts = !renderedProducts.length ? (
+		<PageNotFound anotherList={<ProductsList products={productsTestArray} grid={true} />} />
+	) : (
+		renderedProducts
+	);
 
 	return <ul className={`${style.productsList} ${grid && style.grid}`}>{renderedProducts}</ul>;
 };

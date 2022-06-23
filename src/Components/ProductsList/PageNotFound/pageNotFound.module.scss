@@ -1,0 +1,19 @@
+.pageNotFound {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.icon {
+		margin-top: 80px;
+	}
+
+	.title {
+		margin-top: 40px;
+		font-size: 28px;
+		line-height: 34.13px;
+	}
+	.subTitle {
+		margin: 85px 0 20px 0;
+		font-size: 20px;
+		opacity: 60%;
+	}
+}

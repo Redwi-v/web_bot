@@ -21,7 +21,7 @@ const NavigationBar = props => {
 			icon: searchPageBlack,
 		},
 		{
-			path: '/faivorit',
+			path: '/favorites',
 			icon: favoritesPageBlack,
 		},
 		{

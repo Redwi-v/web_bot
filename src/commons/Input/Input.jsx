@@ -28,6 +28,7 @@ const Input = props => {
 				changeValue(e.target.value);
 			}}
 			type={type}
+			wrap='soft'
 		/>
 	);
 };
