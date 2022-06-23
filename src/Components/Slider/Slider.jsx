@@ -3,6 +3,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import SlickSlider from 'react-slick';
 import style from './slider.module.scss';
 import sneakers from '../../assets/slide-sneakers.png';
+import { NavLink } from 'react-router-dom';
 
 const Slider = props => {
 	const setings = {
@@ -31,13 +32,13 @@ const Slide = props => {
 	const { index } = props;
 
 	return (
-		<div className={style.slide}>
+		<NavLink to={`/home/discount_${index}0`} className={style.slide}>
 			<h2 className={style.slide_title}>{`Скидки до  ${index}0% `}</h2>
 			<h3 className={style.slide_subtitle}>На всю продукцию бренда Nike</h3>
 			<div className={style.iamge}>
 				<img src={sneakers} alt='sneakers' />
 			</div>
-		</div>
+		</NavLink>
 	);
 };
 

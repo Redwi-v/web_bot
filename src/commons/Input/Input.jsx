@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Input = props => {
-	const { submit, value, className, type } = props;
+	const { submit, value = '', className, type, placeholder } = props;
 
 	const [state, setState] = useState({
 		value,
@@ -21,6 +21,7 @@ const Input = props => {
 	return (
 		<input
 			className={className}
+			placeholder={placeholder}
 			onBlur={onBlur}
 			value={state.value}
 			onChange={e => {

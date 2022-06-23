@@ -1,0 +1,43 @@
+.searchWraper {
+	padding: 20px 20px;
+	.search {
+		position: relative;
+	}
+
+	.loupe {
+		position: absolute;
+		display: block;
+		margin: auto;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+	}
+
+	.input {
+		height: 40px;
+		display: flex;
+		background-color: rgba(#e6e9e8, 43%);
+		border-radius: 10px;
+		width: 100%;
+		padding-left: 60px;
+		font-size: 15px;
+		&::placeholder {
+			color: #8b8b8b;
+		}
+	}
+
+	.list {
+		margin-top: 30px;
+		margin-left: 10px;
+	}
+
+	.item {
+	}
+	.link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		font-weight: 500;
+	}
+}

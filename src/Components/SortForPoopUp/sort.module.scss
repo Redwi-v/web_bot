@@ -1,0 +1,21 @@
+.sort {
+	padding: 24px 20px 30px 20px;
+	color: #1f2937;
+	.title {
+		font-weight: 500;
+		line-height: 24px;
+		margin-bottom: 16px;
+		font-size: 16px;
+	}
+
+	.list {
+		margin-left: 10px;
+	}
+
+	.item {
+		line-height: 24px;
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}

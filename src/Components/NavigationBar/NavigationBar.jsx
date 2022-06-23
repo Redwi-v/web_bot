@@ -13,7 +13,7 @@ const NavigationBar = props => {
 
 	const routes = [
 		{
-			path: '/',
+			path: '/home',
 			icon: homePageBlack,
 		},
 		{
@@ -36,7 +36,7 @@ const NavigationBar = props => {
 	const renderItems = routes.map((route, index) => {
 		const { path, icon, numberOfItemsInTheCart } = route;
 
-		const chooseClass = path === location ? style.active : '';
+		const chooseClass = location.includes(path) ? style.active : '';
 
 		return (
 			<li key={index} className={`${style.item} ${chooseClass}`}>

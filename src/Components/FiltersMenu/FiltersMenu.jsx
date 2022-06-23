@@ -4,7 +4,7 @@ import filters from '../../assets/icons/filter.png';
 import listTipe from '../../assets/icons/listTipe.png';
 
 const FiltersMenu = props => {
-	const { ProductsCount = 420, changeGirdMode, filtersAction } = props;
+	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction } = props;
 
 	return (
 		<div className={style.filters}>
@@ -23,7 +23,7 @@ const FiltersMenu = props => {
 					</button>
 				</li>
 				<li className={style.action_item}>
-					<button className={style.action}>
+					<button onClick={sortAction} className={style.action}>
 						<img src={sort} alt=' btn' />
 					</button>
 				</li>
