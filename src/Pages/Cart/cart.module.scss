@@ -6,71 +6,9 @@
 		display: flex;
 		justify-content: space-between;
 
-		&:not(:first-child, :nth-child(2)) {
+		&:not(:first-child) {
 			margin-top: 15px;
 		}
-	}
-	.list {
-		margin-top: 10px;
-	}
-
-	.delete {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-	.item {
-		display: flex;
-		position: relative;
-		height: 130px;
-		margin-bottom: 15px;
-
-		border-bottom: 1px solid #e2e2e2;
-	}
-
-	.prewew {
-		max-width: 135px;
-
-		img {
-			height: 100%;
-			width: 100%;
-			object-fit: contain;
-		}
-	}
-
-	.information {
-		margin-left: 5px;
-		width: 100%;
-	}
-
-	.brand {
-		font-size: 16px;
-	}
-
-	.subTitle {
-		font-size: 13px;
-		max-width: 150px;
-	}
-
-	.countAction {
-		display: flex;
-		align-items: center;
-	}
-
-	.count {
-		display: block;
-		margin: 0 15px;
-	}
-
-	.calculation {
-		display: flex;
-		font-size: 20px;
-		font-weight: 500;
-		margin-top: 15px;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.prise {
 	}
 
 	.comments {
@@ -110,6 +48,10 @@
 	}
 
 	.discount {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 5px;
+
 		color: #46a758;
 		margin-top: 8px;
 		font-size: 18px;
@@ -125,28 +67,6 @@
 		font-size: 24px;
 		&:last-child {
 			font-size: 20px;
-		}
-	}
-
-	@media (max-width: 383px) {
-		padding: 0 20px;
-
-		.item {
-			height: 120px;
-		}
-
-		.calculation {
-			font-size: 17px;
-		}
-		.count {
-			margin: 0 10px;
-		}
-		.button {
-			width: 35px;
-
-			img {
-				width: 100%;
-			}
 		}
 	}
 }

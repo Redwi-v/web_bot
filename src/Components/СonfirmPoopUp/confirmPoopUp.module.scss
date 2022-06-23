@@ -1,0 +1,51 @@
+.confirmPoopUP {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: rgba(#979797, 0.6);
+	z-index: 101;
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.window {
+		background-color: #fff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 15px;
+		max-width: 335px;
+		width: 100%;
+
+		p {
+			max-width: 260px;
+			font-size: 17px;
+			opacity: 60%;
+			margin-bottom: 60px;
+		}
+
+		h1 {
+			font-size: 22px;
+			margin-bottom: 5px;
+		}
+		button {
+			background-color: #46a758;
+			border-radius: 15px;
+			margin-bottom: 28px;
+			padding: 23px 30px;
+			font-size: 22px;
+			font-weight: 500;
+			max-width: 280px;
+			width: 100%;
+		}
+	}
+	.image {
+		margin: 30px 0;
+		img {
+		}
+	}
+}
