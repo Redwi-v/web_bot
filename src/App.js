@@ -6,12 +6,19 @@ import SearchContainer from './Pages/Search/SearchContainer';
 import Product from './Pages/Product/Product';
 import CartContainer from './Pages/Cart/CartContainer';
 import FavoritesContainer from './Pages/Favorites/FavoritesContainer';
-import { useEffects } from 'react';
+import { useEffect } from 'react';
+import chooseImageColor from './scripts/checkColorScheme';
+
+const tele = window.Telegram.WebApp;
 
 function App() {
+	useEffect(() => {
+		tele.ready();
+	});
+
 	return (
 		<div className='App'>
-			<div className='AppInformation'>
+			<div className={`AppInformation ${chooseImageColor('', 'black')}`}>
 				<Routes>
 					<Route path='/home' element={<MainContainer />} />
 					<Route path='home/:discount' element={<MainContainer />} />

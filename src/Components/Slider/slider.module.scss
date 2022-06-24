@@ -12,11 +12,44 @@
 		height: 164px;
 	}
 
+	.arrowPrev {
+		left: 8px;
+	}
+
+	.arrowNext {
+		right: 8px;
+	}
+	.arrow {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+		height: 24px;
+		z-index: 10;
+	}
+
 	.dots {
 		position: absolute;
-		bottom: 5px;
+		bottom: 1px;
 		left: 0;
 		right: 0;
+		li {
+			height: auto;
+		}
+	}
+
+	.dot {
+		width: 8px;
+		height: 8px;
+		background-color: #fff;
+		opacity: 0.2;
+		border-radius: 50%;
+		transition: opacity 0.5s;
+	}
+
+	.active {
+		opacity: 1;
+		transition: opacity 0.5s;
 	}
 
 	.slide_title {
@@ -31,6 +64,8 @@
 		z-index: 40;
 		line-height: 16px;
 		font-size: 12px;
+		text-align: center;
+		font-weight: 700;
 	}
 
 	.iamge {

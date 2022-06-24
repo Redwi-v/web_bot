@@ -5,16 +5,45 @@ import style from './slider.module.scss';
 import sneakers from '../../assets/slide-sneakers.png';
 import { NavLink } from 'react-router-dom';
 
+import prevArrow from '../../assets/icons/sliderArrowLeft.svg';
+import nextArrow from '../../assets/icons/sliderArrowRight.svg';
+import { useState } from 'react';
+
+const PrevArrow = props => {
+	const { onClick } = props;
+	return (
+		<div onClick={onClick} className={`${style.arrowPrev} ${style.arrow}`}>
+			<img src={prevArrow} alt='preArrow' />
+		</div>
+	);
+};
+const NextArrow = props => {
+	const { onClick } = props;
+	return (
+		<div onClick={onClick} className={`${style.arrowNext} ${style.arrow}`}>
+			<img src={nextArrow} alt='preArrow' />
+		</div>
+	);
+};
+
 const Slider = props => {
+	const [activeSlide, seActiveSlide] = useState(0);
+
 	const setings = {
 		dots: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false,
+		swipeToSlide: false,
 		dotsClass: `slick-dots ${style.dots}`,
 		className: style.slider,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		beforeChange: (current, next) => seActiveSlide(next),
+		customPaging: i => {
+			return <div className={`${style.dot} ${i === activeSlide && style.active}`}></div>;
+		},
 	};
 
 	return (

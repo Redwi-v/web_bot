@@ -1,7 +1,13 @@
 import style from './filtersMenu.module.scss';
-import sort from '../../assets/icons/arrows.png';
-import filters from '../../assets/icons/filter.png';
-import listTipe from '../../assets/icons/listTipe.png';
+import sort from '../../assets/icons/arrows.svg';
+import filters from '../../assets/icons/filter.svg';
+import listTipe from '../../assets/icons/listTipe.svg';
+
+import filterArrow from '../../assets/whiteIcons/filterArrows.svg';
+import filtersWhite from '../../assets/whiteIcons/filters.svg';
+import grid from '../../assets/whiteIcons/grid.svg';
+
+import chooseImageColor from '../../scripts/checkColorScheme';
 
 const FiltersMenu = props => {
 	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction } = props;
@@ -14,22 +20,18 @@ const FiltersMenu = props => {
 
 			<ul className={style.actions}>
 				<li className={style.action_item}>
-					<button
-						//remove later
-						onClick={changeGirdMode}
-						//----
-						className={style.action}>
-						<img src={listTipe} alt='list tipe btn' />
+					<button onClick={changeGirdMode} className={style.action}>
+						<img src={chooseImageColor(grid, listTipe)} alt='list tipe btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>
 					<button onClick={sortAction} className={style.action}>
-						<img src={sort} alt=' btn' />
+						<img src={chooseImageColor(filterArrow, sort)} alt='btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>
 					<button onClick={filtersAction} className={style.action}>
-						<img src={filters} alt=' btn' />
+						<img src={chooseImageColor(filtersWhite, filters)} alt=' btn' />
 					</button>
 				</li>
 			</ul>

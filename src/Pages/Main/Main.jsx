@@ -20,7 +20,7 @@ const Main = porps => {
 	};
 
 	const discounts = useParams().discount;
-	const title = discounts && `Cкидки до ${discounts.split('_')[1]}%`;
+	const title = discounts && `${window.Telegram.WebApp.colorScheme} ${discounts.split('_')[1]}%`;
 
 	const ChangeHeaderDiscout = () => {
 		if (discounts) {
