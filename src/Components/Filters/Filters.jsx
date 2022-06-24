@@ -12,11 +12,11 @@ const items = [
 	},
 	{
 		title: 'Цвет',
-		content: <ChooseColor />,
+		content: <ChooseColor type='checkbox' />,
 	},
 	{
 		title: 'Размер',
-		content: <ChooseSize />,
+		content: <ChooseSize type='checkbox' />,
 	},
 	{
 		title: 'Пол',
@@ -25,10 +25,12 @@ const items = [
 ];
 
 const Filtes = props => {
-	const [active, setActive] = useState('');
+	const [active, setActive] = useState([]);
 
 	const renderAccardion = items.map(({ title, content }, index) => {
-		const isActive = active === title ? true : false;
+		const isActive = active.includes(title) ? true : false;
+		const newValue = [...active];
+		isActive ? newValue.splice(newValue.indexOf(title), 1) : newValue.push(title);
 
 		return (
 			<Accargion
@@ -37,7 +39,7 @@ const Filtes = props => {
 				title={title}
 				content={content}
 				onClick={() => {
-					setActive(title);
+					setActive(newValue);
 				}}
 			/>
 		);

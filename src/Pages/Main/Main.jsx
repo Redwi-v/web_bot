@@ -10,13 +10,13 @@ import Header from '../../Components/Header/Header';
 import { useParams } from 'react-router-dom';
 
 const Main = porps => {
-	const { products, changeGirdMode, girdMode, open_closePoopUp } = porps;
+	const { products, changeGirdMode, girdMode, open_closePoopUp, setSortArrowPosition, sortArrowPosition } = porps;
 
 	const openPoopUp = Components => {
 		open_closePoopUp(<Filters />);
 	};
 	const openSortPoopUp = () => {
-		open_closePoopUp(<Sort />);
+		open_closePoopUp(<Sort setSortArrowPosition={setSortArrowPosition} />);
 	};
 
 	const discounts = useParams().discount;
@@ -38,7 +38,13 @@ const Main = porps => {
 	return (
 		<div className={`${style.main} container`}>
 			<ChangeHeaderDiscout />
-			<FiltersMenu filtersAction={openPoopUp} sortAction={openSortPoopUp} changeGirdMode={changeGirdMode} />
+			<FiltersMenu
+				grid={girdMode}
+				filtersAction={openPoopUp}
+				changeGirdMode={changeGirdMode}
+				sortAction={openSortPoopUp}
+				arrowPosition={sortArrowPosition}
+			/>
 			<ProductsList products={products} grid={girdMode} />
 		</div>
 	);

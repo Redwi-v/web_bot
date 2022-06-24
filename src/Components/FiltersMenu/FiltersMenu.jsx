@@ -1,16 +1,33 @@
 import style from './filtersMenu.module.scss';
+
 import sort from '../../assets/icons/arrows.svg';
 import filters from '../../assets/icons/filter.svg';
-import listTipe from '../../assets/icons/listTipe.svg';
+import gridBlack from '../../assets/icons/listTipe.svg';
+import listBlack from '../../assets/icons/list.svg';
 
 import filterArrow from '../../assets/whiteIcons/filterArrows.svg';
 import filtersWhite from '../../assets/whiteIcons/filters.svg';
-import grid from '../../assets/whiteIcons/grid.svg';
+import gridWhite from '../../assets/whiteIcons/grid.svg';
+import listWhite from '../../assets/whiteIcons/list.svg';
+
+import sortArrowTopWhite from '../../assets/whiteIcons/sortArrowTop.svg';
+import sortArrowBottomWhite from '../../assets/whiteIcons/sortArrowBottom.svg';
+import sortArrowTopBlack from '../../assets/whiteIcons/sortArrowTop.svg';
+import sortArrowBottomBlack from '../../assets/whiteIcons/sortArrowTop.svg';
 
 import chooseImageColor from '../../scripts/checkColorScheme';
 
 const FiltersMenu = props => {
-	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction } = props;
+	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction, grid, arrowPosition = 'bottom' } = props;
+
+	const listTypeWhite = grid ? gridWhite : listWhite;
+	const listTypeBlack = grid ? gridBlack : listBlack;
+
+	const positions = {
+		top: chooseImageColor(sortArrowTopWhite, sortArrowTopBlack),
+		bottom: chooseImageColor(sortArrowBottomWhite, sortArrowBottomBlack),
+		together: chooseImageColor(filterArrow, sort),
+	};
 
 	return (
 		<div className={style.filters}>
@@ -21,12 +38,12 @@ const FiltersMenu = props => {
 			<ul className={style.actions}>
 				<li className={style.action_item}>
 					<button onClick={changeGirdMode} className={style.action}>
-						<img src={chooseImageColor(grid, listTipe)} alt='list tipe btn' />
+						<img src={chooseImageColor(listTypeWhite, listTypeBlack)} alt='list tipe btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>
 					<button onClick={sortAction} className={style.action}>
-						<img src={chooseImageColor(filterArrow, sort)} alt='btn' />
+						<img src={positions[arrowPosition] || positions.bottom} alt='btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>

@@ -1,6 +1,5 @@
 .poopUp {
 	position: fixed;
-	display: flex;
 	align-items: flex-end;
 	background-color: rgba(#979797, 0.6);
 	width: 100%;
@@ -8,6 +7,10 @@
 	top: 0;
 	left: 0;
 	z-index: 100;
+
+	animation-name: close;
+	animation-duration: 0.3s;
+	animation-fill-mode: both;
 
 	.window {
 		max-width: 526px;
@@ -17,11 +20,57 @@
 		border-radius: 10px;
 		bottom: -10px;
 		padding-bottom: 10px;
+		opacity: 0;
 	}
 
 	.cross {
 		position: absolute;
 		right: 26px;
 		top: 24px;
+	}
+}
+
+.open {
+	display: flex;
+	animation-name: open;
+	animation-duration: 0.3s;
+	animation-fill-mode: both;
+
+	.window {
+		animation-name: openWind;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+	}
+}
+
+@keyframes open {
+	0% {
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+		z-index: 100;
+	}
+}
+
+@keyframes openWind {
+	0% {
+		margin-bottom: -200px;
+	}
+	100% {
+		margin-bottom: -10px;
+		opacity: 1;
+	}
+}
+
+@keyframes close {
+	0% {
+	}
+	90% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		z-index: -1;
 	}
 }

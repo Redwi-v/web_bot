@@ -7,10 +7,8 @@ const PoopUp = porps => {
 
 	const closeBtnID = 'closeBTN';
 
-	if (!isOpen) return;
-
 	return (
-		<div onClick={closePoopUp} className={style.poopUp} id={closeBtnID}>
+		<div onClick={closePoopUp} className={`${style.poopUp} ${isOpen && style.open}`} id={closeBtnID}>
 			<div className={`${style.window}`}>
 				<button className={style.cross}>
 					<img src={crossIcon} alt='cross' id={closeBtnID} />

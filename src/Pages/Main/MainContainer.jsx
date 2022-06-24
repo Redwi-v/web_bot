@@ -6,21 +6,28 @@ import { open_closePoopUp } from '../../redux/poopUp';
 // remove later
 
 const MainContainer = props => {
-	//For Test -- Remove later -------------------------
-	const [gridMode, setGridMode] = useState({
+	const { open_closePoopUp } = props;
+
+	const [filterMenu, setfilterMenu] = useState({
 		gird: false,
+		sortArrowPosition: '', //top , bottom / togeter === ''
 	});
 	const changeGirdMode = () => {
-		setGridMode({ ...gridMode, gird: !gridMode.gird });
+		setfilterMenu({ ...filterMenu, gird: !setfilterMenu.gird });
 	};
-	//----------------------------------------------------------
+	const setSortArrowPosition = position => {
+		setfilterMenu({ ...filterMenu, sortArrowPosition: position });
+		open_closePoopUp();
+	};
 
 	return (
 		<Main
 			{...props}
 			//For Test
-			girdMode={gridMode.gird}
+			girdMode={filterMenu.gird}
 			changeGirdMode={changeGirdMode}
+			setSortArrowPosition={setSortArrowPosition}
+			sortArrowPosition={filterMenu.sortArrowPosition}
 		/>
 	);
 };

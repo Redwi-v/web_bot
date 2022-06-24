@@ -1,5 +1,7 @@
 import style from './chooseColor.module.scss';
 function ChooseColor(props) {
+	const { type = 'radio' } = props;
+
 	const colorsTest = [
 		{
 			color: '#FF0000',
@@ -50,7 +52,7 @@ function ChooseColor(props) {
 					key={index}
 					style={background}
 					name='color'
-					type='radio'
+					type={type}
 				/>
 				{!inStock && cross && <img className={crossClass} src={cross} alt='cross' />}
 			</div>

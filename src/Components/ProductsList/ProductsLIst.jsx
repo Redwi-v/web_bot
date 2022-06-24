@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import ProductImage from '../../assets/Product.png';
 import PageNotFound from './PageNotFound/PageNotFound';
 
-import hartIcon from '../../assets/icons/hartIcon.png';
+import hartIcon from '../../assets/icons/hartIcon.svg';
 
 const productsTestArray = [
 	{

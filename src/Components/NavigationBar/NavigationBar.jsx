@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 //icons
-import homePageBlack from '../../assets/icons/homePageBlack.png';
-import searchPageBlack from '../../assets/icons/searchPageBlack.png';
-import favoritesPageBlack from '../../assets/icons/favoritesPageBlack.png';
-import cartPageBlack from '../../assets/icons/cartPageBlack.png';
+import homePageBlack from '../../assets/icons/homePageBlack.svg';
+import searchPageBlack from '../../assets/icons/searchPageBlack.svg';
+import favoritesPageBlack from '../../assets/icons/favoritesPageBlack.svg';
+import cartPageBlack from '../../assets/icons/cartPageBlack.svg';
 import home from '../../assets/whiteIcons/home.svg';
 import loupe from '../../assets/whiteIcons/Loupe.svg';
 import hart from '../../assets/whiteIcons/hart.svg';
