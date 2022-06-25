@@ -1,5 +1,4 @@
 import style from './sort.module.scss';
-import { NavLink } from 'react-router-dom';
 
 const Sort = props => {
 	const { setSortArrowPosition } = props;

@@ -19,7 +19,6 @@ import chooseImageColor from '../../scripts/checkColorScheme';
 
 const FiltersMenu = props => {
 	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction, grid, arrowPosition } = props;
-	console.log(arrowPosition);
 
 	const listTypeWhite = grid ? gridWhite : listWhite;
 	const listTypeBlack = grid ? gridBlack : listBlack;

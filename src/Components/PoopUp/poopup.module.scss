@@ -43,6 +43,10 @@
 	}
 }
 
+.window.dark {
+	background-color: var(--tg-theme-bg-color);
+}
+
 @keyframes open {
 	0% {
 	}

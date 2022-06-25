@@ -12,14 +12,17 @@ const itemsTest = [
 		subTitle: 'Air Force 1 Shadow Beige Pale Ivory',
 		prewew: productPrewew,
 		prise: '10 800',
+		inseideCar: true,
 	},
 	{
 		brand: 'Nike',
 		subTitle: 'Air Force 1 Shadow Beige Pale Ivory',
 		prewew: productPrewew,
 		prise: '10 800',
+		inseideCar: false,
 	},
 ];
+
 const CartList = props => {
 	const { footer, items = itemsTest || [] } = props;
 
@@ -33,7 +36,7 @@ const CartList = props => {
 };
 
 const CartItem = ({ item, footer }) => {
-	const { brand, prise, subTitle, prewew } = item;
+	const { brand, prise, subTitle, prewew, inseideCar } = item;
 
 	return (
 		<li className={style.item}>
@@ -50,7 +53,7 @@ const CartItem = ({ item, footer }) => {
 					<h3 className={style.subTitle}>{subTitle}</h3>
 				</NavLink>
 
-				{(footer && footer(prise)) || (
+				{(footer && footer(prise, inseideCar)) || (
 					<div className={style.calculation}>
 						<div className={style.countAction}>
 							<button className={style.button}>

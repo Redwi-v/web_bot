@@ -7,7 +7,8 @@ const Input = props => {
 		value,
 	});
 
-	const onBlur = () => {
+	const onBlur = e => {
+		e.preventDefault();
 		submit && submit(state.value);
 	};
 
@@ -19,17 +20,19 @@ const Input = props => {
 	}, [value]);
 
 	return (
-		<input
-			className={className}
-			placeholder={placeholder}
-			onBlur={onBlur}
-			value={state.value}
-			onChange={e => {
-				changeValue(e.target.value);
-			}}
-			type={type}
-			wrap='soft'
-		/>
+		<form onSubmit={onBlur}>
+			<input
+				className={className}
+				placeholder={placeholder}
+				onBlur={onBlur}
+				value={state.value}
+				onChange={e => {
+					changeValue(e.target.value);
+				}}
+				type={type}
+				wrap='soft'
+			/>
+		</form>
 	);
 };
 

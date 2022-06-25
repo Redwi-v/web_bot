@@ -4,6 +4,8 @@ import ProductImage from '../../assets/Product.png';
 import PageNotFound from './PageNotFound/PageNotFound';
 
 import hartIcon from '../../assets/icons/hartIcon.svg';
+import blackhart from '../../assets/icons/blackFavoritesIcon.svg';
+import { useState } from 'react';
 
 const productsTestArray = [
 	{
@@ -15,6 +17,7 @@ const productsTestArray = [
 		dickription: 'Новая волна комфорта и стиля. Приподнятая подошва и многослойный верх ...',
 		oldPrise: '24 900',
 		prise: '16 200',
+		insideFavorites: true,
 	},
 	{
 		previewImage: ProductImage,
@@ -25,6 +28,7 @@ const productsTestArray = [
 		dickription: 'Новая волна комфорта и стиля. Приподнятая подошва и многослойный верх ...',
 		oldPrise: null,
 		prise: '16 200',
+		insideFavorites: false,
 	},
 	{
 		previewImage: ProductImage,
@@ -35,6 +39,7 @@ const productsTestArray = [
 		dickription: 'Новая волна комфорта и стиля. Приподнятая подошва и многослойный верх ...',
 		oldPrise: '24 900',
 		prise: '16 200',
+		insideFavorites: false,
 	},
 	{
 		previewImage: ProductImage,
@@ -45,6 +50,7 @@ const productsTestArray = [
 		dickription: 'Новая волна комфорта и стиля. Приподнятая подошва и многослойный верх ...',
 		oldPrise: '24 900',
 		prise: '16 200',
+		insideFavorites: false,
 	},
 	{
 		previewImage: ProductImage,
@@ -55,6 +61,7 @@ const productsTestArray = [
 		dickription: 'Новая волна комфорта и стиля. Приподнятая подошва и многослойный верх ...',
 		oldPrise: '24 900',
 		prise: '16 200',
+		insideFavorites: false,
 	},
 ];
 
@@ -76,15 +83,22 @@ const ProductsList = props => {
 };
 
 const ProductsCard = props => {
-	const { discount, brand, name, dickription, oldPrise, prise, previewImage, grid, id } = props;
+	const { discount, brand, name, dickription, oldPrise, prise, previewImage, grid, id, insideFavorites } = props;
+
+	const [isInsideFavorites, setFavorites] = useState(insideFavorites);
+	const addFavorites = () => {
+		setFavorites(!isInsideFavorites);
+	};
 
 	return (
 		<li className={`${style.card} ${grid && style.grid}`}>
 			{/* {Проверка на скидку} */}
 			{discount && <div className={style.discount}>{discount}%</div>}
-			<button className={style.AddToFavoritesBtn}>
-				<img src={hartIcon} alt='Add To Favorites Btn' />
+
+			<button onClick={addFavorites} className={style.AddToFavoritesBtn}>
+				<img src={isInsideFavorites ? blackhart : hartIcon} alt='Add To Favorites Btn' />
 			</button>
+
 			<NavLink to={`/product/${id}`}>
 				<div className={style.header}>
 					<div className={style.previewImage}>

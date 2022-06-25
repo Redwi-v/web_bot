@@ -2,6 +2,8 @@ import style from './confirmPoopUp.module.scss';
 import greenCircle from '../../assets/icons/greenCircle.png';
 import { useState } from 'react';
 
+import chooseImageColor from '../../scripts/checkColorScheme';
+
 const ConfirmPoopUp = props => {
 	const { isOpen = false } = props;
 
@@ -15,7 +17,7 @@ const ConfirmPoopUp = props => {
 
 	return (
 		<div onClick={open_close} className={style.confirmPoopUP}>
-			<div className={style.window}>
+			<div className={`${style.window} ${chooseImageColor(style.dark, '')}`}>
 				<div className={style.image}>
 					<img src={greenCircle} alt='confirm img' />
 				</div>

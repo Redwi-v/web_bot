@@ -75,12 +75,14 @@ const productTest = {
 const Product = props => {
 	const { product = productTest } = props;
 	const { prewew, brand, prise, subTitle, tag, discription, colors, sizes } = product;
-	const maxDiscriptionLength = 273;
+	const maxDiscriptionLength = 200;
+
+	const [moreMode, setMoreMode] = useState(false);
 
 	const cutDiscription = (() => {
-		return discription.length > maxDiscriptionLength
-			? discription.substr(0, maxDiscriptionLength) + '...'
-			: discription;
+		return discription.length > maxDiscriptionLength && moreMode
+			? discription
+			: discription.substr(0, maxDiscriptionLength) + '...';
 	})();
 
 	const navigate = useNavigate();
@@ -108,9 +110,13 @@ const Product = props => {
 			)}
 
 			<p className={style.discription}>{cutDiscription}</p>
-			<NavLink to='#' className={style.more}>
-				Подробнее
-			</NavLink>
+			<button
+				onClick={() => {
+					setMoreMode(!moreMode);
+				}}
+				className={style.more}>
+				{moreMode ? 'Скрыть' : 'Подробнее'}
+			</button>
 
 			<h2 className={style.chooseTitle}>Цвет</h2>
 			<ChooseColor

@@ -11,6 +11,9 @@ import { useState } from 'react';
 //images
 import loupe from '../../assets/icons/loupe.svg';
 import rightArrow from '../../assets/icons/arrowRight.svg';
+import rightArrowWhite from '../../assets/whiteIcons/rightArrow.svg';
+
+import chooseImageColor from '../../scripts/checkColorScheme';
 
 const Search = props => {
 	const [findInput, setFind] = useState(null);
@@ -37,6 +40,7 @@ const Search = props => {
 		},
 	];
 
+	// List
 	let renderList = categoryes.map((categoryesObj, index) => {
 		const { category } = categoryesObj;
 
@@ -44,7 +48,7 @@ const Search = props => {
 			<li className={style.item} key={index}>
 				<NavLink className={style.link} to={`/search/${category || ''}`}>
 					{category}
-					<img src={rightArrow} alt='arrow' />
+					<img src={chooseImageColor(rightArrowWhite, rightArrow)} alt='arrow' />
 				</NavLink>
 			</li>
 		);
@@ -73,7 +77,7 @@ const Search = props => {
 
 const SearchInput = ({ list, find }) => {
 	return (
-		<div className={style.searchWraper}>
+		<div className={`${style.searchWraper} ${chooseImageColor(style.dark, '')}`}>
 			<div className={style.search}>
 				<img className={style.loupe} src={loupe} alt='loupe' />
 				<Input className={style.input} submit={find} placeholder={'Поиск...'} type={'text'} />

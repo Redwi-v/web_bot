@@ -95,3 +95,28 @@
 		@include circleStyles;
 	}
 }
+
+.prise_range.dark {
+	input[type='range']::-webkit-slider-runnable-track {
+	}
+	input[type='range']::-moz-range-track {
+	}
+	input[type='range']::-ms-track {
+	}
+	input[type='range']::-webkit-slider-thumb {
+		@include circleStyles;
+		border: none;
+	}
+	input[type='range']::-moz-range-thumb {
+		@include circleStyles;
+		border: none;
+	}
+	input[type='range']::-ms-thumb {
+		@include circleStyles;
+		border: none;
+	}
+	input[type='range']:active::-webkit-slider-thumb {
+		@include circleStyles;
+		border: none;
+	}
+}

@@ -1,4 +1,5 @@
 import style from './chooseColor.module.scss';
+
 function ChooseColor(props) {
 	const { type = 'radio' } = props;
 

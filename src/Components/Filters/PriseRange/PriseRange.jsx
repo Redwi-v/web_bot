@@ -2,6 +2,7 @@ import style from './priseRange.module.scss';
 
 import { useEffect, useRef, useState } from 'react';
 import Input from '../../../commons/Input/Input';
+import chooseImageColor from '../../../scripts/checkColorScheme';
 
 const PriseRange = props => {
 	const [rangeState, setRangeState] = useState({
@@ -29,7 +30,9 @@ const PriseRange = props => {
 		const percent2 = (valueMax / trackMaxValue) * 100;
 
 		if (rangeTrack.current) {
-			rangeTrack.current.style.background = `linear-gradient(to right, #BABABA ${percent1}% , #000 ${percent1}% , #000 ${percent2}%, #BABABA ${percent2}%)`;
+			chooseImageColor(true, false)
+				? (rangeTrack.current.style.background = `linear-gradient(to right, #BABABA ${percent1}% , #fff ${percent1}% , #fff ${percent2}%, #BABABA ${percent2}%)`)
+				: (rangeTrack.current.style.background = `linear-gradient(to right, #BABABA ${percent1}% , #000 ${percent1}% , #000 ${percent2}%, #BABABA ${percent2}%)`);
 		}
 	};
 	useEffect(() => {
@@ -37,7 +40,7 @@ const PriseRange = props => {
 	}, [rangeTrack, rangeState]);
 
 	return (
-		<div className={style.prise_range}>
+		<div className={`${style.prise_range} ${chooseImageColor(style.dark, '')}`}>
 			<div className={style.priseWraper}>
 				<Input className={style.prise} value={valueMin} type='number' submit={changeMinValue} />
 				<span className={style.line}></span>
