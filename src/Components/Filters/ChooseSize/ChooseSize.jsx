@@ -1,4 +1,6 @@
 import style from './chooseSize.module.scss';
+import chooseImageColor from '../../../scripts/checkColorScheme';
+
 function ChooseSize(props) {
 	const { type = 'radio' } = props;
 
@@ -37,7 +39,7 @@ function ChooseSize(props) {
 
 	const renderSizes = sizes.map(({ size, inStock }, index) => {
 		return (
-			<div className={style.size} key={index}>
+			<div className={`${style.size}`} key={index}>
 				<input disabled={!inStock} className={style.sizeSquare} name='size' id={`color${size}`} type={type} />
 				<label className={`${style.label} ${inStock && style.inStock}`} htmlFor={`color${size}`}>
 					{size}
@@ -45,7 +47,7 @@ function ChooseSize(props) {
 			</div>
 		);
 	});
-	return <div className={style.chooseSize}>{renderSizes}</div>;
+	return <div className={`${style.chooseSize}  ${chooseImageColor(style.dark, '')}`}>{renderSizes}</div>;
 }
 
 export default ChooseSize;

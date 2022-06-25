@@ -8,6 +8,8 @@ import product4 from '../../assets/shoe.png';
 import line from '../../assets/icons/line.svg';
 import blackHartIcon from '../../assets/icons/blackHartIcon.svg';
 import backArrow from '../../assets/icons/backArrow.svg';
+import backArrowWhite from '../../assets/whiteIcons/backArrow.svg';
+import whiteHart from '../../assets/whiteIcons/hartIcon.svg';
 
 import SlickSlider from 'react-slick';
 import { useState } from 'react';
@@ -16,6 +18,7 @@ import ChooseColor from '../../Components/Filters/ChooseColor/ChooseColor';
 import ChooseSize from '../../Components/Filters/ChooseSize/ChooseSize';
 import { useNavigate } from 'react-router-dom';
 import WarningPoopUP from '../../Components/WarningPoopUp/WarningPoopUp';
+import chooseImageColor from '../../scripts/checkColorScheme';
 
 const productTest = {
 	prewew: [product4, product1, product2, product3],
@@ -91,8 +94,13 @@ const Product = props => {
 		<div className={style.product}>
 			<div className={style.prewew}>
 				<div className={style.icons}>
-					<img className={style.backArrow} onClick={() => navigate(-1)} src={backArrow} alt='backArrow' />
-					<img className={style.favoritеIcon} src={blackHartIcon} alt='favoritеIcon' />
+					<img
+						className={style.backArrow}
+						onClick={() => navigate(-1)}
+						src={chooseImageColor(backArrowWhite, backArrow)}
+						alt='backArrow'
+					/>
+					<img className={style.favoritеIcon} src={chooseImageColor(whiteHart, blackHartIcon)} alt='favoritеIcon' />
 				</div>
 				{<PrewewSlider prewew={prewew} />}
 			</div>

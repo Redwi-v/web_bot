@@ -97,6 +97,12 @@
 }
 
 .prise_range.dark {
+	.priseWraper {
+		.line {
+			background-color: rgba(#fff, 0.5);
+		}
+	}
+
 	input[type='range']::-webkit-slider-runnable-track {
 	}
 	input[type='range']::-moz-range-track {

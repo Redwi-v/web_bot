@@ -1,10 +1,11 @@
+import chooseImageColor from '../../scripts/checkColorScheme';
 import style from './sort.module.scss';
 
 const Sort = props => {
 	const { setSortArrowPosition } = props;
 
 	return (
-		<div className={style.sort}>
+		<div className={`${style.sort} ${chooseImageColor(style.dark, '')}`}>
 			<h1 className={style.title}>Сортировать</h1>
 			<ul className={style.list}>
 				<li className={style.item}>
