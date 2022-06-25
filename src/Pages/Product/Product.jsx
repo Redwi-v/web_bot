@@ -10,6 +10,7 @@ import blackHartIcon from '../../assets/icons/blackHartIcon.svg';
 import backArrow from '../../assets/icons/backArrow.svg';
 import backArrowWhite from '../../assets/whiteIcons/backArrow.svg';
 import whiteHart from '../../assets/whiteIcons/hartIcon.svg';
+import cross from '../../assets/whiteIcons/cross.svg';
 
 import SlickSlider from 'react-slick';
 import { useState } from 'react';
@@ -19,6 +20,10 @@ import ChooseSize from '../../Components/Filters/ChooseSize/ChooseSize';
 import { useNavigate } from 'react-router-dom';
 import WarningPoopUP from '../../Components/WarningPoopUp/WarningPoopUp';
 import chooseImageColor from '../../scripts/checkColorScheme';
+
+const Cross = ({ action }) => {
+	return <img onClick={action} src={cross} className={style.crossAllScrin} />;
+};
 
 const productTest = {
 	prewew: [product4, product1, product2, product3],
@@ -80,10 +85,17 @@ const Product = props => {
 	const { prewew, brand, prise, subTitle, tag, discription, colors, sizes } = product;
 	const maxDiscriptionLength = 200;
 
-	const [moreMode, setMoreMode] = useState(false);
+	const [state, setState] = useState({
+		moreMode: false,
+		allScrinSliderOpen: false,
+	});
+
+	const openAllScreenSlider = () => {
+		setState({ ...state, allScrinSliderOpen: !state.allScrinSliderOpen });
+	};
 
 	const cutDiscription = (() => {
-		return discription.length > maxDiscriptionLength && moreMode
+		return discription.length > maxDiscriptionLength && state.moreMode
 			? discription
 			: discription.substr(0, maxDiscriptionLength) + '...';
 	})();
@@ -102,7 +114,19 @@ const Product = props => {
 					/>
 					<img className={style.favoritеIcon} src={chooseImageColor(whiteHart, blackHartIcon)} alt='favoritеIcon' />
 				</div>
-				{<PrewewSlider prewew={prewew} />}
+				{<PrewewSlider prewew={prewew} onClick={openAllScreenSlider} />}
+
+				{/* all screen slider */}
+				{
+					<div className={`${style.allScreen} ${state.allScrinSliderOpen && style.active}`}>
+						<Cross
+							action={() => {
+								openAllScreenSlider();
+							}}
+						/>
+						<PrewewSlider prewew={prewew} />
+					</div>
+				}
 			</div>
 			<div className={style.mainInfo}>
 				<h1 className={style.brand}>{brand}</h1>
@@ -120,10 +144,10 @@ const Product = props => {
 			<p className={style.discription}>{cutDiscription}</p>
 			<button
 				onClick={() => {
-					setMoreMode(!moreMode);
+					setState({ ...state, moreMode: !state.moreMode });
 				}}
 				className={style.more}>
-				{moreMode ? 'Скрыть' : 'Подробнее'}
+				{state.moreMode ? 'Скрыть' : 'Подробнее'}
 			</button>
 
 			<h2 className={style.chooseTitle}>Цвет</h2>
@@ -144,7 +168,7 @@ const Product = props => {
 
 // ------------- slider
 const PrewewSlider = props => {
-	const { prewew } = props;
+	const { prewew, onClick } = props;
 
 	const [activeSlide, setActiveSlide] = useState(0);
 
@@ -176,7 +200,7 @@ const PrewewSlider = props => {
 		<div>
 			<SlickSlider {...setings}>
 				{prewew.map((img, index) => {
-					return <Slide img={img} key={index} />;
+					return <Slide activeSlide={activeSlide} img={img} key={index} onClick={onClick} />;
 				})}
 			</SlickSlider>
 		</div>
@@ -184,10 +208,16 @@ const PrewewSlider = props => {
 };
 
 const Slide = props => {
-	const { img } = props;
+	const { img, onClick, activeSlide } = props;
 
 	return (
-		<div className={style.slide}>
+		<div
+			onClick={() => {
+				if (onClick) {
+					onClick(activeSlide);
+				}
+			}}
+			className={style.slide}>
 			<div className={style.iamge}>
 				<img src={img} alt='product' />
 			</div>

@@ -38,7 +38,7 @@
 
 	.window {
 		animation-name: openWind;
-		animation-duration: 1s;
+		animation-duration: 0.5s;
 		animation-fill-mode: both;
 	}
 }
@@ -61,6 +61,7 @@
 	0% {
 		margin-bottom: -200px;
 	}
+
 	100% {
 		margin-bottom: -10px;
 		opacity: 1;
