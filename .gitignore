@@ -7,6 +7,8 @@
 /Bot
 .firebaserc
 firebase.json
+firebase
+
 
 # testing
 /coverage

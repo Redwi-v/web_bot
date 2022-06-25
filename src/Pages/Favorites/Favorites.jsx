@@ -1,7 +1,7 @@
 import CartList from '../../Components/CartList/CartList';
 import Header from '../../Components/Header/Header';
 import style from './favorites.module.scss';
-import greenCart from '../../assets/icons/greenCart.png';
+import greenCart from '../../assets/icons/greenCart.svg';
 
 const Favorites = props => {
 	return (

@@ -1,7 +1,7 @@
-import Header from '../../Components/Header/Header';
 import style from './cart.module.scss';
+import Header from '../../Components/Header/Header';
 
-import bigCart from '../../assets/icons/bigCart.png';
+import bigCart from '../../assets/icons/bigCart.svg';
 
 import Input from '../../commons/Input/Input';
 import { useState } from 'react';

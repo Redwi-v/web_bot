@@ -1,5 +1,5 @@
 import style from './accardion.module.scss';
-import arrowButton from '../../../assets/icons/arrowButton.png';
+import arrowButton from '../../../assets/icons/arrowButton.svg';
 
 const Accargion = props => {
 	const { active, onClick, content, title } = props;

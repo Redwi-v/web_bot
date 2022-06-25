@@ -13,19 +13,25 @@
 	}
 
 	.arrowPrev {
-		left: 8px;
+		left: 0px;
+		padding: 0 8px;
 	}
 
 	.arrowNext {
-		right: 8px;
+		right: 0;
+		padding: 0 8px;
 	}
 	.arrow {
 		position: absolute;
+		display: flex;
 		bottom: 0;
 		top: 0;
 		margin: auto;
-		height: 24px;
 		z-index: 10;
+
+		img {
+			width: 24px;
+		}
 	}
 
 	.dots {

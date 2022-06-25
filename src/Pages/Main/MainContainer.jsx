@@ -9,11 +9,11 @@ const MainContainer = props => {
 	const { open_closePoopUp } = props;
 
 	const [filterMenu, setfilterMenu] = useState({
-		gird: false,
+		grid: false,
 		sortArrowPosition: '', //top , bottom / togeter === ''
 	});
 	const changeGirdMode = () => {
-		setfilterMenu({ ...filterMenu, gird: !setfilterMenu.gird });
+		setfilterMenu({ ...filterMenu, grid: !filterMenu.grid });
 	};
 	const setSortArrowPosition = position => {
 		setfilterMenu({ ...filterMenu, sortArrowPosition: position });
@@ -24,7 +24,7 @@ const MainContainer = props => {
 		<Main
 			{...props}
 			//For Test
-			girdMode={filterMenu.gird}
+			gridMode={filterMenu.grid}
 			changeGirdMode={changeGirdMode}
 			setSortArrowPosition={setSortArrowPosition}
 			sortArrowPosition={filterMenu.sortArrowPosition}

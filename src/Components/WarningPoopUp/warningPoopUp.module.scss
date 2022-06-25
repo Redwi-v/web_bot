@@ -1,16 +1,24 @@
 .poopUP {
 	display: flex;
 	position: fixed;
-	background: rgba(255, 198, 0, 0.1);
+	align-items: center;
+	background-color: #ffe3a2;
 	border-radius: 8px;
 	padding: 8px 15px;
 	bottom: 70px;
 	z-index: 70;
 	right: 15px;
 	left: 15px;
+	height: 40px;
+	font-weight: 500;
 
 	.icon {
+		margin: 8px 10px 0 0;
 	}
 	.text {
 	}
+}
+
+.dark {
+	background-color: #ffc600;
 }

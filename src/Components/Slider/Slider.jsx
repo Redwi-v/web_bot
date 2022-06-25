@@ -7,13 +7,18 @@ import { NavLink } from 'react-router-dom';
 
 import prevArrow from '../../assets/icons/sliderArrowLeft.svg';
 import nextArrow from '../../assets/icons/sliderArrowRight.svg';
+
+import prevArrowWhite from '../../assets/whiteIcons/slideLeft.svg';
+import nextArrowWhite from '../../assets/whiteIcons/sliderRight.svg';
+
 import { useState } from 'react';
+import chooseImageColor from '../../scripts/checkColorScheme';
 
 const PrevArrow = props => {
 	const { onClick } = props;
 	return (
 		<div onClick={onClick} className={`${style.arrowPrev} ${style.arrow}`}>
-			<img src={prevArrow} alt='preArrow' />
+			<img src={chooseImageColor(prevArrowWhite, prevArrow)} alt='preArrow' />
 		</div>
 	);
 };
@@ -21,7 +26,7 @@ const NextArrow = props => {
 	const { onClick } = props;
 	return (
 		<div onClick={onClick} className={`${style.arrowNext} ${style.arrow}`}>
-			<img src={nextArrow} alt='preArrow' />
+			<img src={chooseImageColor(nextArrowWhite, nextArrow)} alt='preArrow' />
 		</div>
 	);
 };
@@ -35,7 +40,6 @@ const Slider = props => {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		swipeToSlide: false,
 		dotsClass: `slick-dots ${style.dots}`,
 		className: style.slider,
 		nextArrow: <NextArrow />,
@@ -44,6 +48,8 @@ const Slider = props => {
 		customPaging: i => {
 			return <div className={`${style.dot} ${i === activeSlide && style.active}`}></div>;
 		},
+		draggable: false,
+		swipe: false,
 	};
 
 	return (

@@ -5,10 +5,9 @@ import product2 from '../../assets/productTest.png';
 import product3 from '../../assets/slide-sneakers.png';
 import product4 from '../../assets/shoe.png';
 
-import line from '../../assets/icons/line.png';
-
-import blackHartIcon from '../../assets/icons/blackHartIcon.png';
-import backArrow from '../../assets/icons/backArrow.png';
+import line from '../../assets/icons/line.svg';
+import blackHartIcon from '../../assets/icons/blackHartIcon.svg';
+import backArrow from '../../assets/icons/backArrow.svg';
 
 import SlickSlider from 'react-slick';
 import { useState } from 'react';
@@ -45,7 +44,32 @@ const productTest = {
 		},
 	],
 
-	sizes: [],
+	sizes: [
+		{
+			size: 38,
+			inStock: false,
+		},
+		{
+			size: 39,
+			inStock: true,
+		},
+		{
+			size: 41,
+			inStock: true,
+		},
+		{
+			size: 42,
+			inStock: true,
+		},
+		{
+			size: 43,
+			inStock: true,
+		},
+		{
+			size: 44,
+			inStock: true,
+		},
+	],
 };
 
 const Product = props => {
@@ -97,7 +121,7 @@ const Product = props => {
 				crossClass={style.cross}
 			/>
 			<h2 className={style.chooseTitle}>Размер</h2>
-			<ChooseSize />
+			<ChooseSize sizes={sizes} />
 
 			<WarningPoopUP open={true} text='Выберите размер' />
 		</div>

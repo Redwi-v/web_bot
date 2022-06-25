@@ -16,14 +16,6 @@ function ChooseSize(props) {
 			inStock: true,
 		},
 		{
-			size: 'xxl',
-			inStock: true,
-		},
-		{
-			size: 'xl',
-			inStock: true,
-		},
-		{
 			size: 40,
 			inStock: true,
 		},
@@ -32,7 +24,11 @@ function ChooseSize(props) {
 			inStock: true,
 		},
 		{
-			size: 'l',
+			size: 42,
+			inStock: true,
+		},
+		{
+			size: 42,
 			inStock: true,
 		},
 	];

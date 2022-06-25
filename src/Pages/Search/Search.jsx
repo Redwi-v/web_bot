@@ -6,11 +6,11 @@ import Header from '../../Components/Header/Header';
 import FiltersMenu from '../../Components/FiltersMenu/FiltersMenu';
 
 import { useParams } from 'react-router';
-//images
-import loupe from '../../assets/icons/loupe.png';
-import rightArrow from '../../assets/icons/arrowRight.png';
 import ProductsList from '../../Components/ProductsList/ProductsLIst';
 import { useState } from 'react';
+//images
+import loupe from '../../assets/icons/loupe.svg';
+import rightArrow from '../../assets/icons/arrowRight.svg';
 
 const Search = props => {
 	const [findInput, setFind] = useState(null);

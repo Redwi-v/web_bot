@@ -10,7 +10,7 @@ import Header from '../../Components/Header/Header';
 import { useParams } from 'react-router-dom';
 
 const Main = porps => {
-	const { products, changeGirdMode, girdMode, open_closePoopUp, setSortArrowPosition, sortArrowPosition } = porps;
+	const { products, changeGirdMode, gridMode, open_closePoopUp, setSortArrowPosition, sortArrowPosition } = porps;
 
 	const openPoopUp = Components => {
 		open_closePoopUp(<Filters />);
@@ -20,7 +20,7 @@ const Main = porps => {
 	};
 
 	const discounts = useParams().discount;
-	const title = discounts && `${window.Telegram.WebApp.colorScheme} ${discounts.split('_')[1]}%`;
+	const title = discounts && `Скидки до ${discounts.split('_')[1]}%`;
 
 	const ChangeHeaderDiscout = () => {
 		if (discounts) {
@@ -39,13 +39,13 @@ const Main = porps => {
 		<div className={`${style.main} container`}>
 			<ChangeHeaderDiscout />
 			<FiltersMenu
-				grid={girdMode}
+				grid={gridMode}
 				filtersAction={openPoopUp}
 				changeGirdMode={changeGirdMode}
 				sortAction={openSortPoopUp}
 				arrowPosition={sortArrowPosition}
 			/>
-			<ProductsList products={products} grid={girdMode} />
+			<ProductsList products={products} grid={gridMode} />
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import style from './pageNotFound.module.scss';
 
-import bigLoupe from '../../../assets/icons/BigLoupe.png';
+import bigLoupe from '../../../assets/icons/BigLoupe.svg';
 
 const PageNotFound = props => {
 	const { anotherList, image, title } = props;

@@ -12,13 +12,14 @@ import listWhite from '../../assets/whiteIcons/list.svg';
 
 import sortArrowTopWhite from '../../assets/whiteIcons/sortArrowTop.svg';
 import sortArrowBottomWhite from '../../assets/whiteIcons/sortArrowBottom.svg';
-import sortArrowTopBlack from '../../assets/whiteIcons/sortArrowTop.svg';
-import sortArrowBottomBlack from '../../assets/whiteIcons/sortArrowTop.svg';
+import sortArrowTopBlack from '../../assets/icons/sortArrowTop.svg';
+import sortArrowBottomBlack from '../../assets/icons/sortArrowBottom.svg';
 
 import chooseImageColor from '../../scripts/checkColorScheme';
 
 const FiltersMenu = props => {
-	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction, grid, arrowPosition = 'bottom' } = props;
+	const { ProductsCount = 420, changeGirdMode, filtersAction, sortAction, grid, arrowPosition } = props;
+	console.log(arrowPosition);
 
 	const listTypeWhite = grid ? gridWhite : listWhite;
 	const listTypeBlack = grid ? gridBlack : listBlack;
@@ -43,7 +44,7 @@ const FiltersMenu = props => {
 				</li>
 				<li className={style.action_item}>
 					<button onClick={sortAction} className={style.action}>
-						<img src={positions[arrowPosition] || positions.bottom} alt='btn' />
+						<img src={positions[arrowPosition] || positions.together} alt='btn' />
 					</button>
 				</li>
 				<li className={style.action_item}>

@@ -1,9 +1,9 @@
 import style from './header.module.scss';
-import backArrow from '../../assets/icons/backArrow.png';
-import { NavLink, useNavigate } from 'react-router-dom';
+import backArrow from '../../assets/icons/backArrow.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Header = props => {
-	const { title, backHref } = props;
+	const { title } = props;
 
 	const navigate = useNavigate();
 

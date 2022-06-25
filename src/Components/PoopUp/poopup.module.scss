@@ -66,11 +66,10 @@
 @keyframes close {
 	0% {
 	}
-	90% {
+
+	100% {
 		opacity: 0;
 		visibility: hidden;
-	}
-	100% {
-		z-index: -1;
+		z-index: -10;
 	}
 }
