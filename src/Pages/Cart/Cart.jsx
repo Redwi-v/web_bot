@@ -9,6 +9,7 @@ import PageNotFound from '../../Components/ProductsList/PageNotFound/PageNotFoun
 import ProductsLIst from '../../Components/ProductsList/ProductsLIst';
 import CartList from '../../Components/CartList/CartList';
 import СonfirmPoopUp from '../../Components/СonfirmPoopUp/ConfirmPoopUp';
+import addTelegramBtn from '../../scripts/addTelegramBtn';
 
 const Cart = props => {
 	const { cartItems = [1] } = props;
@@ -16,7 +17,15 @@ const Cart = props => {
 	const [text, setText] = useState({
 		comment: '',
 		promo: '',
+		isConfirm: true,
 	});
+
+	const confirm = () => {
+		setText({ ...text, isConfirm: !text.isConfirm });
+	};
+
+	addTelegramBtn('Сделать заказ', confirm);
+
 	const changeCommentText = e => {
 		const newText = e.target.value;
 		setText({ ...text, comment: newText });
@@ -67,7 +76,7 @@ const Cart = props => {
 
 	return (
 		<div className={style.cart}>
-			<СonfirmPoopUp isOpen={true} />
+			<СonfirmPoopUp open_close={confirm} isOpen={text.isConfirm} />
 
 			<Header title='Корзина' />
 

@@ -20,10 +20,11 @@ import ChooseSize from '../../Components/Filters/ChooseSize/ChooseSize';
 import { useNavigate } from 'react-router-dom';
 import WarningPoopUP from '../../Components/WarningPoopUp/WarningPoopUp';
 import chooseImageColor from '../../scripts/checkColorScheme';
+import addTelegramBtn from '../../scripts/addTelegramBtn';
 
-const Cross = ({ action }) => {
-	return <img onClick={action} src={cross} className={style.crossAllScrin} />;
-};
+// const Cross = ({ action }) => {
+// 	return <img onClick={action} src={cross} className={style.crossAllScrin} />;
+// };
 
 const productTest = {
 	prewew: [product4, product1, product2, product3],
@@ -88,7 +89,12 @@ const Product = props => {
 	const [state, setState] = useState({
 		moreMode: false,
 		allScrinSliderOpen: false,
+		productOnCar: 0,
 	});
+	const addProduct = () => {
+		setState({ ...state, productOnCar: ++state.productOnCar });
+	};
+	addTelegramBtn(state.productOnCar ? 'Добавить ещё' : 'Добавить в корзину', addProduct);
 
 	const openAllScreenSlider = () => {
 		setState({ ...state, allScrinSliderOpen: !state.allScrinSliderOpen });
@@ -117,16 +123,7 @@ const Product = props => {
 				{<PrewewSlider prewew={prewew} onClick={openAllScreenSlider} />}
 
 				{/* all screen slider */}
-				{
-					<div className={`${style.allScreen} ${state.allScrinSliderOpen && style.active}`}>
-						<Cross
-							action={() => {
-								openAllScreenSlider();
-							}}
-						/>
-						<PrewewSlider prewew={prewew} />
-					</div>
-				}
+				{/* {<PrewewSlider prewew={prewew} className={`${style.allScreen} ${state.allScrinSliderOpen && style.active}`} />} */}
 			</div>
 			<div className={style.mainInfo}>
 				<h1 className={style.brand}>{brand}</h1>
@@ -168,7 +165,7 @@ const Product = props => {
 
 // ------------- slider
 const PrewewSlider = props => {
-	const { prewew, onClick } = props;
+	const { prewew, onClick, className } = props;
 
 	const [activeSlide, setActiveSlide] = useState(0);
 
@@ -192,7 +189,7 @@ const PrewewSlider = props => {
 		arrows: false,
 		dotsClass: `slick-dots ${style.dots}`,
 		customPaging: customPaging,
-		className: style.slider,
+		className: className || style.slider,
 		beforeChange: (current, next) => setActiveSlide(next),
 	};
 
