@@ -12,6 +12,8 @@ import { useParams } from 'react-router-dom';
 const Main = porps => {
 	const { products, changeGirdMode, gridMode, open_closePoopUp, setSortArrowPosition, sortArrowPosition } = porps;
 
+	window.Telegram.WebApp.MainButton.hide();
+
 	const openPoopUp = Components => {
 		open_closePoopUp(<Filters />);
 	};

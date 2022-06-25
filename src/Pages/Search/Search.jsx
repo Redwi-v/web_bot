@@ -18,6 +18,7 @@ import chooseImageColor from '../../scripts/checkColorScheme';
 const Search = props => {
 	const [findInput, setFind] = useState(null);
 	const whatFind = useParams().find;
+	window.Telegram.WebApp.MainButton.hide();
 
 	const categoryes = [
 		{

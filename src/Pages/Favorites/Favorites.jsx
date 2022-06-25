@@ -5,6 +5,8 @@ import greenCart from '../../assets/icons/greenCart.svg';
 import car from '../../assets/icons/car.svg';
 
 const Favorites = props => {
+	window.Telegram.WebApp.MainButton.hide();
+
 	return (
 		<div className={style.favorites}>
 			<Header title={'Избранное'} />
